@@ -1,0 +1,70 @@
+:root {
+  --bg: #fafaf7; --fg: #1f2328; --muted: #656d76; --accent: #2da44e;
+  --card: #ffffff; --line: #d8dee4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --accent: #3fb950;
+    --card: #161b22; --line: #30363d;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh;
+  background: var(--bg); color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  line-height: 1.7;
+}
+.wrap { width: min(92vw, 760px); margin: 0 auto; }
+
+header { padding: 40px 0 0; }
+.site-title { margin: 0; font-size: 1.5rem; }
+.site-title a { color: inherit; text-decoration: none; }
+.site-sub { margin: 4px 0 20px; color: var(--muted); }
+
+nav.tabs {
+  display: flex; gap: 4px; overflow-x: auto;
+  border-bottom: 1px solid var(--line);
+}
+nav.tabs a {
+  flex: none; padding: 10px 16px; color: var(--muted); text-decoration: none;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap;
+}
+nav.tabs a:hover { color: var(--fg); }
+nav.tabs a[aria-current="page"] {
+  color: var(--fg); font-weight: 600; border-bottom-color: var(--accent);
+}
+
+main { padding: 32px 0 48px; }
+h2 { margin: 0 0 16px; font-size: 1.4rem; }
+h3 { margin: 0 0 6px; font-size: 1.05rem; }
+p { margin: 0 0 16px; }
+.muted { color: var(--muted); }
+
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 20px; margin-bottom: 12px;
+}
+.card p:last-child { margin-bottom: 0; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+a.card { display: block; color: inherit; text-decoration: none; }
+a.card:hover { border-color: var(--accent); }
+
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list li {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--line);
+}
+.post-list time { flex: none; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.tag {
+  display: inline-block; padding: 2px 10px; margin: 0 6px 6px 0;
+  font-size: .85rem; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 999px;
+}
+dl.info { display: grid; grid-template-columns: 7em 1fr; gap: 10px 12px; margin: 0; }
+dl.info dt { color: var(--muted); }
+dl.info dd { margin: 0; }
+a { color: var(--accent); }
+
+footer { padding: 24px 0 40px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
