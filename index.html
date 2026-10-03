@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Pages 테스트</title>
+  <style>
+    :root { --bg: #fafaf7; --fg: #1f2328; --accent: #2da44e; --card: #ffffff; --line: #d8dee4; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0d1117; --fg: #e6edf3; --accent: #3fb950; --card: #161b22; --line: #30363d; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    }
+    main {
+      width: min(92vw, 520px); padding: 32px; text-align: center;
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    p { margin: 0 0 20px; line-height: 1.6; }
+    button {
+      padding: 10px 20px; font-size: 1rem; color: #fff; background: var(--accent);
+      border: 0; border-radius: 8px; cursor: pointer;
+    }
+    #time { margin-top: 16px; font-variant-numeric: tabular-nums; opacity: .8; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>호스팅 성공</h1>
+    <p>GitHub Pages로 올린 정적 페이지 테스트입니다.</p>
+    <button id="btn">현재 시각 보기</button>
+    <div id="time" aria-live="polite"></div>
+  </main>
+  <script>
+    document.getElementById('btn').addEventListener('click', function () {
+      document.getElementById('time').textContent = new Date().toLocaleString('ko-KR');
+    });
+  </script>
+</body>
+</html>
