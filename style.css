@@ -67,4 +67,27 @@ dl.info dt { color: var(--muted); }
 dl.info dd { margin: 0; }
 a { color: var(--accent); }
 
+/* 로그인 잠금 */
+html.locked .wrap { display: none; }
+html:not(.locked) #login { display: none; }
+#login { min-height: 100vh; display: grid; place-items: center; padding: 16px; }
+.login-card { width: min(92vw, 360px); }
+.login-card label { display: block; margin-bottom: 12px; color: var(--muted); font-size: .9rem; }
+.login-card input {
+  display: block; width: 100%; margin-top: 4px; padding: 10px 12px; font-size: 1rem;
+  color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+}
+.login-card input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.login-card button {
+  width: 100%; padding: 10px; font-size: 1rem; color: #fff; background: var(--accent);
+  border: 0; border-radius: 8px; cursor: pointer;
+}
+.login-error { color: #cf222e; font-size: .9rem; margin: 0 0 12px; }
+@media (prefers-color-scheme: dark) { .login-error { color: #ff7b72; } }
+nav.tabs .logout {
+  flex: none; margin-left: auto; padding: 10px 4px; font-size: .9rem; cursor: pointer;
+  color: var(--muted); background: none; border: 0;
+}
+nav.tabs .logout:hover { color: var(--fg); }
+
 footer { padding: 24px 0 40px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
